@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 | DungdqPS08542</title>
+</head>
+<style>
+    .h1 {
+        background-color: #430ea5;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+        text-align: center;
+        padding: 10px 0px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 25px;
+    }
+</style>
+<script>
+    function cophai_SNT(n) {
+        var flag = true;
+        if (n < 2) {
+            flag = false;
+        } else {
+            for (var i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+</script>
+
+<style>
+    .table {
+        margin: 0px auto;
+        width: 40%;
+        background-color: #757272;
+        padding: 15px;
+        text-align: center;
+        border-radius: 50px;
+        margin-top: 10px;
+    }
+    
+    .table span {
+        margin-left: 10px;
+        background-color: blue;
+        padding: 10px;
+        border-radius: 50%;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .table .abc {
+        background-color: yellow;
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="table">
+        <script>
+            for (var i = 10; i <= 50; i++) {
+                if (cophai_SNT(i)) {
+                    if (i == 17) {
+                        document.write("<span class=abc>" + i + "</span>");
+                    } else {
+                        document.write("<span>" + i + "</span>");
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

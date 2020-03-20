@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 | DungdqPS08542</title>
+</head>
+<style>
+    .h1 {
+        background-color: #430ea5;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+        text-align: center;
+        padding: 10px 0px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 25px;
+    }
+</style>
+<script>
+    function check_SNT(n) {
+        var flag = true;
+
+        if (n < 2) {
+            flag = false;
+        } else {
+            for (var i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if (flag == true) {
+            document.write("<h1>" + n + " là số nguyên tố.</h1>");
+        } else {
+            document.write("<h1>" + n + " không là số nguyên tố.</h1>");
+        }
+    }
+</script>
+
+<body>
+    <div class="table">
+        <script>
+            var x = 17;
+            check_SNT(x);
+        </script>
+
+        <hr>
+
+        <script>
+            var x = 34;
+            check_SNT(x);
+        </script>
+    </div>
+
+</body>
+
+</html>

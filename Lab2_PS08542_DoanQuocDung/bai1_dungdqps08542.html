@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1 | Dungdqps08542</title>
+</head>
+<script src="javaScrip.js"></script>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto, sans-serif;
+    }
+    
+    .container {
+        display: flex;
+        height: 60vh;
+    }
+    
+    form {
+        margin: auto;
+        background: #f2f2f2;
+        padding: 4em;
+    }
+    
+    input {
+        font-size: 2em;
+        color: #888;
+        padding: 0.25em;
+        margin-top: 0.25em;
+    }
+    
+    button {
+        font-size: 1.5em;
+        margin-top: 1em;
+        padding: 0.5em;
+        background: coral;
+        color: white;
+        border: none;
+        border-radius: 0.25em;
+    }
+    
+    .table {
+        margin: 0px auto;
+        width: 40%;
+        background-color: #757272;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    .table span {
+        margin-left: 10px;
+        background-color: blue;
+        padding: 10px;
+        border-radius: 50%;
+        font-weight: bold;
+        color: white;
+        line-height: 50px;
+    }
+    
+    .table .abc {
+        background-color: yellow;
+        color: black;
+    }
+</style>
+
+
+
+<body>
+    <div class="container">
+        <form method="post">
+            <label for="number-field">Nhập số lượng</label>
+            <br>
+            <input id="idnumber" name="number" value="0" type="number">
+            <br>
+            <input type="button" value="In kết quả" onclick="getNumber();">
+        </form>
+
+    </div>
+
+    <div class="table">
+        <script>
+            document.write('Số lượng: ' + sl[0]);
+            for (var i = 0; i <= length * 10; i++) {
+                document.writeln("<span>" + i + "</span>");
+            }
+        </script>
+    </div>
+
+</body>
+<script>
+    function getNumber() {
+        var number = document.getElementById("idnumber").value;
+        var sl = [number];
+        alert("SL : " + sl[0]);
+    }
+</script>
+
+</html>
