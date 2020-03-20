@@ -16,6 +16,11 @@
         font-family: Roboto, sans-serif;
     }
     
+    body {
+        background-image: linear-gradient(to bottom right, purple, pink);
+        height: 100vh;
+    }
+    
     .container {
         display: flex;
         height: 60vh;
@@ -25,6 +30,7 @@
         margin: auto;
         background: #f2f2f2;
         padding: 4em;
+        border-radius: 10px;
     }
     
     input {
@@ -34,71 +40,81 @@
         margin-top: 0.25em;
     }
     
-    button {
-        font-size: 1.5em;
-        margin-top: 1em;
-        padding: 0.5em;
-        background: coral;
-        color: white;
+    input[type=button] {
+        background-color: #4CAF50;
         border: none;
-        border-radius: 0.25em;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
     }
     
     .table {
         margin: 0px auto;
-        width: 40%;
-        background-color: #757272;
+        max-width: 80%;
+        min-width: 40%;
         padding: 15px;
         text-align: center;
         border-radius: 5px;
         margin-top: 10px;
+        overflow: auto;
     }
     
     .table span {
         margin-left: 10px;
-        background-color: blue;
-        padding: 10px;
-        border-radius: 50%;
+        background: linear-gradient(100deg, rgb(204, 27, 27), rgb(131, 115, 28), rgb(28, 255, 122));
+        padding: 5px 15px;
+        border-radius: 20px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border: none;
         font-weight: bold;
         color: white;
         line-height: 50px;
     }
     
-    .table .abc {
-        background-color: yellow;
-        color: black;
+     ::-webkit-scrollbar {
+        width: 20px;
+    }
+    
+     ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background: rgba(23, 172, 73, 0.719);
+        border-radius: 10px;
+    }
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background: #ff0000;
     }
 </style>
-
-
 
 <body>
     <div class="container">
         <form method="post">
             <label for="number-field">Nhập số lượng</label>
             <br>
-            <input id="idnumber" name="number" value="0" type="number">
+            <input id="idnumber" name="number" value="5" type="text">
             <br>
-            <input type="button" value="In kết quả" onclick="getNumber();">
+            <input type="button" value="In kết quả" onclick="getNumber();" onsubmit="return false">
         </form>
-
     </div>
-
-    <div class="table">
-        <script>
-            document.write('Số lượng: ' + sl[0]);
-            for (var i = 0; i <= length * 10; i++) {
-                document.writeln("<span>" + i + "</span>");
-            }
-        </script>
-    </div>
-
+    <div class="table" id="table"> </div>
 </body>
 <script>
     function getNumber() {
         var number = document.getElementById("idnumber").value;
-        var sl = [number];
-        alert("SL : " + sl[0]);
+        var text = "";
+        var i = 0;
+        while (i <= number) {
+            text += "<span>" + i + "</span>";
+            i++;
+        }
+        document.getElementById("table").innerHTML = text;
     }
 </script>
 

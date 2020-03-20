@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Get Text Input Field Value in JavaScript</title>
-</head>
+<html>
 
 <body>
-    <input type="text" placeholder="Type something..." id="myInput">
-    <button type="button" onclick="getInputValue();">Get Value</button>
-
+    <p id="demo"></p>
     <script>
-        function getInputValue() {
-            // Selecting the input element and get its value 
-            var inputVal = document.getElementById("myInput").value;
-
-            // Displaying the value
-            alert(inputVal);
+        var list = ['<span > 1 </span>', 2, 3, 4, 5];
+        var i = 0,
+            length = list.length;
+        for (i; i < length; i++) {
+            console.log(list[i]);
         }
+        document.getElementById("demo").innerHTML = list;
     </script>
 </body>
 
