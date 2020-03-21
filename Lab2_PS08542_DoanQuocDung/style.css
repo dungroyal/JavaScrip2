@@ -1,15 +1,3 @@
-@mixin softui-shadow {
-    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1), -2px -2px 12px rgba(255, 255, 255, .5), inset -2px -2px 4px rgba(255, 255, 255, .1), 2px 2px 8px rgba(0, 0, 0, 0.15), ;
-}
-
-@mixin softui-shadow-active {
-    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1), inset -2px -2px 12px rgba(255, 255, 255, .5), inset -2px -2px 4px rgba(255, 255, 255, .1), inset 2px 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-@mixin softui-shadow-buttonclick {
-    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1), inset -2px -2px 12px rgba(255, 255, 255, .5), inset -2px -2px 4px rgba(255, 255, 255, .1), inset 4px 4px 8px rgba(0, 0, 0, 0.15);
-}
-
 * {
     margin: 0;
     padding: 0;

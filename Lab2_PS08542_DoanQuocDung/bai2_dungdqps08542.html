@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 | Dungdqps08542</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto, sans-serif;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom right, purple, pink);
+        height: 100vh;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 50px;
+    }
+    
+    .container>div {
+        background-color: #f1f1f1;
+        width: 100%;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 2px;
+    }
+    
+    button {
+        background-color: #419b0d;
+        width: 20%;
+        margin: 0px auto;
+        text-align: center;
+        line-height: 75px;
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 2px;
+        border: 0px;
+        margin-bottom: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #addclass {
+        color: yellow;
+        background: red;
+    }
+</style>
+
+<body>
+    <main class="container" id="container">
+        <div>Dũng</div>
+        <div>Tuấn</div>
+        <div>Anh</div>
+        <div>Nhân</div>
+        <div>Thiện</div>
+        <div>Tài</div>
+        <div>Toàn</div>
+        <div>Huy</div>
+        <div>Phong</div>
+        <div>Thành</div>
+    </main>
+
+
+    <main class="container" id="container">
+        <button onclick="chuyenmau()"> Chuyển màu</button>
+    </main>
+</body>
+<script src="javaScrip.js"></script>
+
+</html>
