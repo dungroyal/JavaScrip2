@@ -21,3 +21,39 @@ function chuyenmau() {
         }
     }
 }
+
+//Bài 3
+
+var arr = [];
+
+for (var i = 0; i <= 10; i++) {
+    var number = Math.random() * 100;
+    arr[i] = Math.round(number);
+}
+
+function layso() {
+    text = "";
+    for (var i = 1; i <= 10; i++) {
+        text += "<div>" + arr[i] + "</div>";
+    }
+    document.getElementById("container").innerHTML = text;
+}
+
+function sapxep() {
+    arr2 = arr.sort();
+    text = "";
+    for (var i = 1; i <= 10; i++) {
+        text += "<div>" + arr2[i] + "</div>";
+    }
+    document.getElementById("container").innerHTML = text;
+}
+
+function tongle() {
+    tongle = 0;
+    for (var i = 1; i <= 10; i++) {
+        if (arr[i] % 2 != 0) {
+            tongle += arr[i];
+        }
+    }
+    document.getElementById("tongle").innerHTML = "<div>Tổng các số lẻ: " + tongle + "</div>";
+}

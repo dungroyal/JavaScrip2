@@ -55,7 +55,6 @@ button {
     color: #909090;
     font-size: 20px;
     font-weight: 600;
-    @include softui-shadow;
     background-color: #f2f3f7;
     transition: .2s;
 }
