@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4 | Dungdqps08542</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Roboto, sans-serif;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom right, purple, pink);
+        height: 100vh;
+    }
+    
+    div {
+        background-color: #f1f1f1;
+        width: 35%;
+        text-align: center;
+        line-height: 75px;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 3px;
+    }
+    
+    div img {
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="image" onmouseover="onmouseOver()" onmouseout="onmouseOut()">
+        <img src="assets/2.jpg" alt="">
+    </div>
+</body>
+<script>
+    function onmouseOver() {
+        document.getElementById("image").innerHTML = '<img src="assets/1.jpg" alt="">';
+    }
+
+    function onmouseOut() {
+        document.getElementById("image").innerHTML = '<img src="assets/2.jpg" alt="">';
+    }
+</script>
+
+</html>

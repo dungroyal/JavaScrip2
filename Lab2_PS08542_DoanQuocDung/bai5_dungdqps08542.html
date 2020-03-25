@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5 | Dungdqps08542</title>
+</head>
+
+<body>
+
+    <p> <button onclick="moWin()">Mở win</button> </p>
+    <hr>
+    <fieldset>
+        <legend>Di chuyển đến vị trí tuỳ ý</legend>
+        <input type="number" value="100" id="x">
+        <input type="number" value="100" id="y">
+        <button onclick="dichuyen1Chut()">Di chuyển</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Di chuyển đến vị trí cố định</legend>
+        <input type="number" value="100" id="dcx">
+        <input type="number" value="50" id="dcy">
+        <button onclick="dichuyenDen()">Di chuyển</button>
+    </fieldset>
+    <hr>
+    <p> <button onclick="dongWin()">Đóng win</button> </p>
+</body>
+<script>
+    var w;
+
+    function moWin() {
+        w = window.open("bai4_dungdqps08542.html", "Bai4 | Dungdqps08542", "width=500,height=300,top=50,left=600");
+    }
+
+    function dichuyen1Chut() {
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        w.moveBy(x, y);
+        w.focus();
+    }
+
+    function dichuyenDen() {
+        var x = document.getElementById("dcx").value;
+        var y = document.getElementById("dcy").value;
+        w.moveTo(x, y);
+        w.focus();
+    }
+
+    function dongWin() {
+        w.close();
+    }
+</script>
+
+</html>
