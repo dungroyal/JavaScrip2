@@ -45,7 +45,7 @@
         color: yellow;
         font-size: 0.7em;
         margin: 4px 10px 0 0;
-        cursor: pointer
+        cursor: pointer;
     }
     
     #h_container h4 {
@@ -76,7 +76,49 @@
             }, 500);
         });
         $(".loaitin a:eq(3)").attr("title", "Đoàn Quốc Dũng | PS08542");
+
+        // Bài 2  
+        $("title").html("Đoàn Quốc Dũng | PS08542");
+        $("#h_container").css({
+            "width": "550px",
+            "position": "absolute",
+            "left": "250px",
+            "top": "42px"
+        });
+        $("#fab,#fas").css({
+            "font-size": "12px",
+            "cursor": "pointer",
+            "float": "right",
+            "margin": "4px 5px"
+        });
+        $("#h_container img").dblclick(
+            function() {
+                $(this).toggle(500);
+            }
+        );
+        $("#fas").click(function() {
+            $("#h_container img").show(500);
+        })
+        $("#h_container img:eq(0),#h_container img:eq(1)").height(250).width(272.5);
+        $("#h_container img:last").width(549.5);
+        $("#menu a").each(function() {
+            var lt = $(this).attr("lt");
+            $(this).attr("href", "tintrongloai.php?idLT=" + lt);
+        });
+
+        // Bài 3 
+        $("body").hide().fadeIn(3000);
+        $(".fa-retweet").click(function() {
+            $("#h_container").hide(1000).delay(1000).show(1500, xong);
+        });
     });
+
+    function xong() {
+        $(this).css({
+            "transform": "rotate(45deg)",
+            "transition-duration": "1000ms"
+        })
+    }
 </script>
 
 <body>
@@ -110,7 +152,7 @@
         </div>
     </div>
     <div id="h_container">
-        <h4>Hình đẹp <i id="fab" class="fab fa-google-wallet"></i> <i id="fas" class="fas fa-volleyball-ball"></i></h4>
+        <h4>Hình đẹp </i><i id="fab" class="fas fa-retweet"></i> <i id="fas" class="fas fa-eye"></i></h4>
         <div id="listhinh">
             <img width="250" height="180" title="Gà mẹ ấp con" src="images/1.jpg">
             <img width="250" src="images/2.jpg">
