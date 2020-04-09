@@ -91,7 +91,7 @@
         })
 
         $('.fa-angle-double-up').click(function() {
-            $('div.row h3').next().next().next().toggle(500)
+            $('div.row h3').next().next().next().next().toggle(500)
         });
 
         $('.fa-eye-slash').attr('title', 'Ẩn đi các hàng chẵn').click(function() {
@@ -124,21 +124,18 @@
         });
 
         $(".row span:contains('Đăng')").each(function() {
-            $(this).prepend("Ngày ").css({
-                'color': '#554f4f',
-                "font-size": "16px",
-                "margin-left": "10px",
-                "font-weight": "700"
-            });
+            $(this).prepend("Ngày ");
         })
 
-        $(".row span:contains('Xem')").each(function() {
-            $(this).append(" lần").css({
-                'color': '#554f4f',
-                "font-size": "16px",
-                "margin-left": "10px",
-                "font-weight": "700"
-            });
+        $(".row span:contains('Xem')").after("<span>Tác giả : Đoàn Quốc Dũng </span>").each(function() {
+            $(this).append(" lần.");
+        })
+
+        $('.row span').css({
+            'color': '#554f4f',
+            "font-size": "16px",
+            "margin-left": "10px",
+            "font-weight": "700"
         })
 
     });
