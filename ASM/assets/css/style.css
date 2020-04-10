@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500;600;700;800&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'Baloo Paaji 2', cursive;
 }
 
 html,
@@ -89,6 +91,7 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    font-family: 'Baloo Paaji 2', cursive;
 }
 
 article,
@@ -132,35 +135,288 @@ table {
     border-spacing: 0;
 }
 
+.location-status {
+    color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Header */
+
 header {
-    width: 100%;
-    height: 50px;
-    background-color: brown;
+    width: 1350px;
+    height: 80px;
+    background: linear-gradient(to right, #cfa414, #c21500);
     min-height: 10vh;
     text-align: center;
+    margin: 0px auto;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.38);
 }
 
-.nav {
-    width: 20%;
+.header-left {
     float: left;
-    min-height: 80vh;
-    padding: 10px;
+    width: 30%;
+    height: 100%;
+    border-radius: 0px 0px 0px 20px;
 }
 
-.content {
-    width: 80%;
-    background-color: darkcyan;
+.header-left .header-left_img {
+    width: 30%;
     float: left;
-    min-height: 80vh;
 }
 
-footer {
-    clear: both;
-    background-color: black;
-    min-height: 10vh;
+.header-left .header-left_img img {
+    width: 60%;
+    line-height: 80px;
+    margin-top: 2px;
 }
+
+.header-left .header-left_name {
+    width: 70%;
+    float: left;
+    line-height: 80px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+.header-right {
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+
+.header-right-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+}
+
+.header-menu_list {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 80px;
+}
+
+.header-menu_list a:hover {
+    letter-spacing: 2px;
+}
+
+
+/* Main */
 
 .main {
     width: 1200px;
     margin: 0px auto;
+}
+
+
+/* nav */
+
+.nav {
+    position: fixed;
+    top: 200;
+    width: 300px;
+    float: left;
+    min-height: 50vh;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    margin-right: 1%;
+    box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
+    background: linear-gradient(to right, rgb(8, 80, 120), rgb(133, 216, 206));
+}
+
+
+/* Content */
+
+.content {
+    position: relative;
+    left: 315px;
+    width: 900px;
+    background: linear-gradient(to right, rgb(213, 51, 105), rgb(203, 173, 109));
+    float: left;
+    min-height: 200vh;
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
+}
+
+
+/* Footer */
+
+.footer-distributed {
+    margin: 0px auto;
+    background: linear-gradient(to right, #1F1C2C, #928DAB);
+    box-sizing: border-box;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    margin-top: 80px;
+    border-radius: 20px 20px 0px 0px;
+    min-height: 35vh;
+    clear: both;
+    width: 1350px;
+    box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    background: rgba(0, 0, 0, .3);
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: none;
+    z-index: 4;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+#return-to-top i {
+    color: rgb(54, 0, 153);
+    margin: 0;
+    position: relative;
+    left: 14px;
+    top: 10px;
+    font-size: 14px;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    text-align: center;
+    align-content: center;
+}
+
+.fa-chevron-up:before {
+    content: "\f077";
+}
+
+.footer-distributed .footer-left {
+    width: 40%;
+    float: left;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font-family: 'Baloo Paaji 2', cursive;
+    margin: 0;
+    font-size: 40px;
+}
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    margin-right: 20px;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-center {
+    width: 35%;
+    float: left;
+}
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.fa-map-marker:before {
+    content: "\f041";
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-right {
+    width: 20%;
+    float: left;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-left h3 img {
+    width: 10%;
+}
+
+.footer-company-about img {
+    width: 80%;
+}
+
+.footer-company-about {
+    width: 80%;
+    float: left;
 }
