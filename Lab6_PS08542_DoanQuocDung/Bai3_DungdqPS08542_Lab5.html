@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3 | Đoàn Quốc Dũng | PS08542</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+    #ttl #path {
+        background-color: #036;
+        color: #FFF;
+        padding: 10px;
+        text-transform: uppercase;
+        font-size: 1.2rem
+    }
+    
+    #ttl .row {
+        border-bottom: solid 1px #036;
+        padding-right: 5px;
+    }
+    
+    #ttl .row p:last-child {
+        text-align: right;
+        margin: 0
+    }
+    
+    #ttl .row p:last-child a {
+        color: #990033;
+        text-decoration: none;
+    }
+    
+    #ttl .row p:last-child a:hover {
+        color: #006699;
+        text-decoration: underline;
+    }
+    
+    #ttl h3 {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    #ttl .row p {
+        margin: 5px 10px;
+    }
+    
+    .fa-globe,
+    .fa-angle-double-right,
+    .fas,
+    .fa-angle-double-up,
+    .far {
+        float: right;
+        margin-right: 15px;
+    }
+    
+    .rotate {
+        transform: rotate(180deg);
+        transition-duration: 500ms;
+    }
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<script>
+    $(document).ready(function() {
+        $("html").css({
+            'font-size': '20px',
+            'letter-spacing': '2px'
+        });
+        $("#ttl").css({
+            'width': '750px',
+            'margin': '0px auto',
+            'border': '1px solid',
+        });
+        $('div.row').eq(2).attr('title', 'Đoàn Quốc Dũng | PS08542');
+        $('div.row').on({
+            mouseover: function() {
+                $(this).css('background-color', '#0087ff3b');
+            },
+            mouseout: function() {
+                $(this).css('background-color', 'transparent');
+            },
+            dblclick: function() {
+                alert("Mời nhắp vào chi tiết để xem tin");
+            }
+        });
+        $('.fa-angle-double-up').click(function() {
+            $(this).toggleClass('rotate');
+        })
+        $('.fa-angle-double-up').click(function() {
+            $('div.row h3').next().next().next().next().toggle(500)
+        });
+        $('.fa-eye-slash').attr('title', 'Ẩn đi các hàng chẵn').click(function() {
+            $('.row:even').slideToggle(1000);
+            $(this);
+        })
+        $('.far').attr('title', 'Ẩn đi các hàng lẻ').click(function() {
+            $('.row:odd').fadeToggle(1000);
+        });
+
+        // Bài 2
+        $('.row p a').each(function() {
+            var x = $(this).attr('idTin');
+            $(this).attr('href', 'chitiet.php?idTin=' + x);
+        });
+        $('.row h3').each(function() {
+            var hba = $(this).html();
+            var href = $('.row p a').attr('href');
+            $(this).html('<a href="' + href + '">' + hba + '</a>');
+            $(this).children().css({
+                "text-decoration": "none",
+                "font-size": "0px 10px",
+                "color": "Black",
+                "margin-left": "10px"
+
+            })
+        });
+        $(".row span:contains('Đăng')").each(function() {
+            $(this).prepend("Ngày ");
+        });
+        $(".row span:contains('Xem')").after("<span>Tác giả : Đoàn Quốc Dũng </span>").each(function() {
+            $(this).append(" lần.");
+        });
+        $('.row span').css({
+            'color': '#554f4f',
+            "font-size": "16px",
+            "margin-left": "10px",
+            "font-weight": "700"
+        });
+
+        // Bài 3  
+        $('.row').each(function() {
+            var text = $(this).children('span').eq(1).text();
+            var cut = text.substr(5);
+            var view = parseInt(cut);
+            if (view > 300) {
+                $(this).children('span').eq(1).css('background-color', 'yellow');
+                $(this).children('h3').css('text-transform', 'uppercase');
+            } else if (view < 200) {
+                $(this).children('p').last().children().html('Mời xem').css('color', 'red');;
+            }
+        });
+    });
+</script>
+
+<body>
+    <div id="ttl">
+        <div id="path"> Trang chủ > Thư giãn > Thơ hay
+            </i><i class="far fa-eye-slash"></i>
+            <i class="fas fa-eye-slash"></i> <i class="fas fa-angle-double-up"></i>
+        </div>
+        <div id="thanhphantrang" align="right"></div>
+        <div class="row">
+            <h3> Đưa em tìm động hoa vàng </h3><span>Đăng: 06/07/2011.</span><span>Xem: 260 </span>
+            <p> Mười con nhạn trắng về tha<br>Như Lai thường trụ trên tà áo xuân<br> Vai nghiêng nghiêng suối tơ huyền<br> Đôi gò đào nở trên miền tuyết thơm </p>
+            <p><a href="#" idTin="766">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Bài thơ Ông đồ </h3><span>Đăng: 06/07/2011.</span><span>Xem: 105 </span>
+            <p>Mỗi năm hoa đào nở<br>Lại thấy ông đồ già<br>Bày mực Tàu giấy đỏ<br>Bên phố đông người qua... Liên quan đến Tết, có lẽ không có bài thơ nào phổ biến bằng bài “Ông Đồ” </p>
+            <p><a href="#" idTin="765">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> BÀi thơ có 8 cách đọc </h3><span>Đăng: 01/01/2009.</span><span>Xem: 194</span>
+            <p>
+                Ta mến cảnh xuân ánh sáng ngời.<br>Thú vui thơ rượu chén đầy vơi<br>Hoa cài giậu trúc cành xuân biếc<br> Lá quyện hương xuân sắc thắm tươi...Đây là một bài thơ thật kỳ lạ. Có đến 8 cách đọc khác nhau </p>
+            <p><a href="#" idTin="127">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Yêu </h3><span>Đăng: 01/01/2009.</span><span>Xem: 468 </span>
+            <p> Yêu là chết ở trong lòng một ít<br>Vì mấy khi yêu mà chắc được yêu.<br> Cho rất nhiều song nhận chẳng bao nhiêu<br> Người ta phụ, hoặc thờ ơ, chẳng biết ... </p>
+            <p><a href="#" idTin="126">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Ngày Xưa Dư Âm... </h3><span>Đăng: 31/12/2008. </span><span>Xem: 231 </span>
+            <p> Thơ thất ngôn độc thanh: Đây là một đặc dạng của thơ thất ngôn tứ tuyệt, đặc biệt chỉ dùng thanh bằng, tạo nên âm điệu lạ </p>
+            <p><a href="#" idTin="107">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Bình khô đập chén cả cười với nhau </h3><span> Đăng: 30/12/2008.</span><span>Xem: 411 </span>
+            <p> Hôm nay ánh trăng vàng lơ LỬNG<br> Gió nhẹ lay hờ HỮNG cành CÂY<br> Đắng cay lời cuối là ĐÂY<br> Ngày mai xa cách cho ĐẦY nhớ THƯƠNG(*) </p>
+            <p><a href="#" idTin="106">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Lời vàng của sếp </h3><span>Đăng: 30/12/2008. </span><span>Xem: 442 </span>
+            <p> Bây giờ ghế ít đít nhiều <br>Chúng mày hãy nhớ những điều sau đây </p>
+            <p><a href="#" idTin="105">Chi tiết</a></p>
+        </div>
+        <div class="row">
+            <h3> Bài thơ Tiếng Thu của Lưu Trọng Lư </h3><span>Đăng: 30/12/2008. </span><span>Xem: 266 </span>
+            <p> Xuất hiện giữa mùa hạ nóng bức và mùa đông lạnh lẽo, mùa thu mát dịu và mơ màng là nguồn cảm hứng bất tận của văn nhân, thi sĩ xưa nay. Viết Thu vịnh và Đây mùa thu tới, Nguyễn Khuyến và Xuân Diệu đã đóng góp cho văn học sử nước nhà hai bài
+                thơ hay về cảnh thu và tình thu. </p>
+            <p><a href="#" idTin="104">Chi tiết</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
