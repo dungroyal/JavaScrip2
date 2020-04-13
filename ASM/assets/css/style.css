@@ -242,12 +242,11 @@ header {
     position: fixed;
     width: 250px;
     float: left;
-    min-height: 20vh;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 5px;
     margin-right: 1%;
     box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
-    background: linear-gradient(to right, rgb(8, 80, 120), rgb(133, 216, 206));
+    background-color: #f5f5f5;
 }
 
 .btn-default {
@@ -340,10 +339,11 @@ header {
 .wrapper-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 95%;
+    width: 70%;
     font-size: 18px;
     line-height: 2.2;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .wrapper-table div .left {
@@ -396,6 +396,10 @@ header {
     text-align: center;
 }
 
+.nav-menu ul li a {
+    color: #000;
+}
+
 .nav-menu ul li span {
     margin-left: 8px;
 }
@@ -408,8 +412,16 @@ header {
     left: 270px;
     width: 930px;
     float: left;
-    min-height: 200vh;
+    min-height: 100vh;
     margin-bottom: 15px;
+}
+
+section {
+    width: 100%;
+    min-height: 50vh;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
 }
 
 .content .home {
@@ -476,6 +488,7 @@ header {
 .content-about-content-info {
     width: 70%;
     float: left;
+    display: contents;
 }
 
 .content-about-content-info h1 {
@@ -490,6 +503,7 @@ header {
     font-size: 20px;
     margin: 20px 0px;
     text-align: justify;
+    line-height: 1.2;
 }
 
 
@@ -658,4 +672,273 @@ header {
 .footer-company-about {
     width: 80%;
     float: left;
+}
+
+
+/* Css trang bài viết */
+
+.content .content-post {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.content-post-content-list {
+    width: 100%;
+    margin-bottom: 22px;
+    display: inline-block;
+    position: relative;
+}
+
+.content-post-content-list:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+}
+
+.content-post-title-detail {
+    width: 80%;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    padding: 0 15px 0 20px;
+    margin: 6px 0 4px 0;
+}
+
+.content-post-title-control {
+    display: inline;
+    text-align: right;
+    font-weight: 500;
+    line-height: 40px;
+    padding-right: 36px;
+    cursor: pointer;
+    font-size: 1.em;
+}
+
+.content-post-content {
+    width: 95%;
+    margin: 0px auto;
+    height: 100%;
+}
+
+.content-post-content-image {
+    width: 30%;
+    float: left;
+    height: 150px;
+    overflow: hidden;
+}
+
+
+/* Rotate */
+
+img {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    cursor: pointer;
+}
+
+img:hover {
+    -webkit-transform: rotate(2deg) scale(1.1);
+    transform: rotate(2deg) scale(1.1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.content-post-content-image img {
+    width: 100%;
+    float: left;
+    object-fit: cover;
+    height: 150px;
+    box-shadow: 0px 0px 1px rgb(119, 114, 114);
+}
+
+.content-post-content-list:hover img {
+    -webkit-transform: rotate(5deg) scale(1.2);
+    transform: rotate(5deg) scale(1.2);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.content-post-content-text {
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+.content-post-title-detail:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    left: 5px;
+    top: 2px;
+    bottom: 2px;
+    -webkit-transform: skew(-20deg);
+    -khtml-transform: skew(-20deg);
+    transform: skew(-20deg);
+    background-color: #dd3333;
+}
+
+.content-post-title {
+    padding: 20px 0px 0px 20px;
+    margin-bottom: 10px;
+}
+
+.content-post-content-text {
+    padding-left: 15px;
+}
+
+.content-post-content-text_title {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.content-post-content-text_title a {
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.content-post-content-text_publish {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.content-post-content-text_publish span {
+    margin-right: 10px;
+}
+
+.content-post-content-text_summaryh {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    opacity: .8;
+}
+
+.width10 {
+    width: 10%;
+}
+
+.height70px {
+    height: 70px;
+}
+
+.width90p {
+    width: 90%;
+}
+
+.nav-accordion-container {
+    position: relative;
+    max-width: 500px;
+    height: auto;
+    margin: 10px auto;
+}
+
+.accordion-container>h2 {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-set {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+}
+
+.accordion-set>a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.accordion-set>a i {
+    float: right;
+    margin-top: 2px;
+}
+
+.accordion-set>a.active {
+    background-color: #3399cc;
+    color: #fff;
+}
+
+.accordion-content {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: none;
+}
+
+.accordion-content p {
+    padding: 10px 15px;
+    margin: 0;
+    color: #333;
+}
+
+.nav-accordion-container h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.accordion-content li {
+    list-style: none;
+}
+
+.accordion-content li a {
+    width: 100%;
+    list-style: none;
+    color: #555;
+    display: block;
+    padding: 10px 0px 5px 20px;
+}
+
+.accordion-content li a:hover {
+    background-color: white;
+}
+
+.load {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000000000;
+    display: block;
+    overflow: hidden;
+}
+
+.load img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px;
 }

@@ -15,8 +15,11 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 
-<body>
-    <header>
+<body class="preloading">
+    <div class="load">
+        <img src="assets/images/loader.gif">
+    </div>
+    <header id="home">
         <div class="header-left">
             <div class="header-left_img">
                 <img src="assets/images/avatar.png" alt="">
@@ -28,10 +31,10 @@
         <div class="header-right">
             <div class="header-right-menu">
 
-                <div class="header-menu_list"><a href="#">Trang chủ</a> </div>
-                <div class="header-menu_list"><a href="#">bài viết</a> </div>
-                <div class="header-menu_list"><a href="#">Đăng kí</a> </div>
-                <div class="header-menu_list"><a href="#">hình đẹp</a> </div>
+                <div class="header-menu_list"><a href="index.html">Trang chủ</a> </div>
+                <div class="header-menu_list"><a href="baiviet.html">bài viết</a> </div>
+                <div class="header-menu_list"><a href="javascript:void(0)">Đăng kí</a> </div>
+                <div class="header-menu_list"><a href="javascript:void(0)">hình đẹp</a> </div>
                 <div class="location-status header-menu_list ">
                     <div class="digital-clock">00:00:00</div>
                 </div>
@@ -44,9 +47,10 @@
             <div class="d-flex flex-column">
                 <div class="nav-menu">
                     <ul>
-                        <li class=""><a href="index.html"><i class="fas fa-home"></i><span>Trang chủ</span></a></li>
+                        <li class=""><a href="#home"><i class="fas fa-home"></i><span>Trang chủ</span></a></li>
                         <li class=""><a href="#about"><i class="fas fa-address-card"></i><span>Giới thiệu</span></a></li>
-                        <li><a href="#contact"><i class="fab fa-facebook-messenger"></i><span>Liên hệ</span></a></li>
+                        <li class=""><a href="baiviet.html"><i class="fas fa-scroll"></i><span>Bài viết</span></a></li>
+                        <li class=""><a href="javascript:void(0)"><i class="fas fa-images"></i><span>Hình đẹp</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -70,11 +74,11 @@
                 </div>
 
                 <div class="home-name_contact">
-                    <a href="#contact" class="btn btn-default">Follow Me</a>
+                    <a href="#about" class="btn btn-default">Contact Me</a>
                 </div>
             </section>
 
-            <section class="about">
+            <section class="about" id="about">
                 <div class="content-about-title">
                     Giới thiệu
                 </div>
@@ -95,15 +99,16 @@
                             <div>Email: <span class="left">DungdqPS08542@</span></div>
                             <div>Địa chỉ: <span class="right">Gò Vấp</span></span>
                             </div>
+                            <div>Phone: <span class="left">0398 022 720</span></div>
+                            <div>Facebook:
+                                <a href="https://www.facebook.com/Quocdungroyal/" style="color: blue;"> <span class="right">Đoàn Quốc Dũng</span></a>
+                                </span>
+                            </div>
                         </div>
 
                     </div>
 
                 </div>
-
-            </section>
-
-            <section class="contact">
 
             </section>
         </div>
@@ -119,13 +124,13 @@
             <h3>DUNGDQPS08542</h3>
 
             <p class="footer-links">
-                <a href="#">Trang chủ</a>
-                <a href="#">Bài viết</a>
-                <a href="#">Đăng kí</a>
-                <a href="#">Hình đẹp</a>
+                <a href="index.html">Trang chủ</a>
+                <a href="baiviet.html">Bài viết</a>
+                <a href="javascript:void(0)">Đăng kí</a>
+                <a href="javascript:void(0)">Hình đẹp</a>
             </p>
 
-            <p class="footer-company-name">DungdqPS08542 © 2020</p>
+            <p class="footer-company-name">Design by DungdqPS08542 © 2020</p>
         </div>
 
         <div class="footer-center">
@@ -150,14 +155,14 @@
         <div class="footer-right">
 
             <p class="footer-company-about">
-                <img src="assets/images/avatar.png" alt="">
+                <img src="assets/images/avatar2.png" alt="">
             </p>
 
             <div class="footer-icons">
 
                 <a href="https://www.facebook.com/Quocdungroyal/"><i class="fab fa-facebook-square"></i></a>
                 <a href="https://www.instagram.com/dungroyal.0505/"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-at"></i></a>
+                <a href="javascript:void(0)"><i class="fas fa-at"></i></a>
                 <a href="https://github.com/dungroyal"><i class="fab fa-github"></i></a>
 
             </div>
@@ -167,6 +172,5 @@
     </footer>
     <a href="javascript:" id="return-to-top" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
 </body>
-
 
 </html>
