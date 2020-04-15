@@ -31,44 +31,62 @@
         <h2>Tình trạng thời tiết</h2>
         <div id="kq"></div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            var apiKey = "a73d1598452fcb3363972697cfab5212";
-            var lat = 10.8415116;
-            var long = 106.659238;
-            var url = "http://api.openweathermap.org/data/2.5/weather?lang=vi&lat=" + lat + "&lon=" + long + "&appid=" + apiKey;
-            hienthoitiet(url);
-        });
-
-        function hienthoitiet(url) {
-            $.getJSON(url, function(data) {
-                console.log(url);
-                tp = data['name'];
-                country = data['sys']['country'];
-                mota = data['weather'][0]['description'];
-                temp = (data['main']['temp']) - 273.15;
-                speddwind = data['wind']['speed'];
-                humidity = data['main']['humidity'];
-                visibility = data['visibility'];
-                var fullDate = new Date(1586948651);
-                var sunrise = fullDate.getHours;
-                console.log(fullDate);
-
-                $('#kq').append('<p><span>Thành Phố: </span><span>' + tp + '</span></p>');
-                $('#kq').append('<p><span>Quốc gia: </span><span>' + country + '</span></p>');
-                $('#kq').append('<p><span>Tình hình thời tiết: </span><span>' + mota + '</span></p>');
-                $('#kq').append('<p><span>Nhiệt độ: </span><span>' + temp + '°C </span></p>');
-                $('#kq').append('<p><span>Tốc độ gió: </span><span>' + speddwind + 'mps</span></p>');
-                $('#kq').append('<p><span>Độ ẩm: </span><span>' + humidity + '%</span></p>');
-                $('#kq').append('<p><span>Tầm nhìn xa: </span><span>' + visibility + '</span></p>');
-                $('#kq').append('<p><span>Mặt trời mọc: </span><span>' + fullDate + '</span></p>');
-            })
-        }
-
-        var x = getDa
-    </script>
-
 </body>
+<script>
+    $(document).ready(function() {
+        var apiKey = "a73d1598452fcb3363972697cfab5212";
+        var lat = 10.8415116;
+        var long = 106.659238;
+        var url = "http://api.openweathermap.org/data/2.5/weather?lang=vi&lat=" + lat + "&lon=" + long + "&appid=" + apiKey;
+        hienthoitiet(url);
+    });
 
+    function hienthoitiet(url) {
+        $.getJSON(url, function(data) {
+            console.log(url);
+            tp = data['name'];
+            country = data['sys']['country'];
+            mota = data['weather'][0]['description'];
+            temp = (data['main']['temp']) - 273.15;
+            speddwind = data['wind']['speed'];
+            humidity = data['main']['humidity'];
+            visibility = data['visibility'];
+            sunrise = formatDay(1586904127);
+            sunset = formatDay(1586948651);
+
+            $('#kq').append('<p><span>Thành Phố: </span><span>' + tp + '</span></p>');
+            $('#kq').append('<p><span>Quốc gia: </span><span>' + country + '</span></p>');
+            $('#kq').append('<p><span>Tình hình thời tiết: </span><span>' + mota + '</span></p>');
+            $('#kq').append('<p><span>Nhiệt độ: </span><span>' + temp + '°C </span></p>');
+            $('#kq').append('<p><span>Tốc độ gió: </span><span>' + speddwind + 'mps</span></p>');
+            $('#kq').append('<p><span>Độ ẩm: </span><span>' + humidity + '%</span></p>');
+            $('#kq').append('<p><span>Tầm nhìn xa: </span><span>' + visibility + '</span></p>');
+            $('#kq').append('<p><span>Mặt trời mọc: </span><span>' + sunrise + '</span></p>');
+            $('#kq').append('<p><span>Mặt trời Lặng: </span><span>' + sunset + '</span></p>');
+        });
+    }
+
+    function formatDay(timestamp) {
+        var date = new Date(timestamp*1000);
+        // Get giờ
+        if ((date.getHours())<10) {
+            var hours= '0'+(date.getHours());
+        }else{
+            var hours= date.getHours();
+        }
+        // Get Phút
+        if ((date.getMinutes())<10) {
+            var minutes= '0'+(date.getMinutes());
+        }else{
+            var minutes= date.getMinutes();
+        }
+        // Get Giây
+        if ((date.getSeconds())<10) {
+            var seconds= '0'+(date.getSeconds());
+        }else{
+            var seconds= date.getSeconds();
+        }
+        return hours+':'+minutes+':'+seconds;
+    }
+</script>
 </html>
