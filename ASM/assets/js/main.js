@@ -4,6 +4,17 @@ $(window).on('load', function(event) {
 });
 
 $(document).ready(function() {
+
+    $('.header-right-menu a').click(function() {
+        var href = 'page/' + ($(this).attr('href'));
+        $.get(href, "", function(data) {
+            $('div.main').html(data, loadData());
+            loadJquery();
+        });
+        return false;
+    });
+
+
     // Smooth Scroll to Div using jQuery
     $('a[href*=\\#]:not([href=\\#])').on('click', function() {
         var target = $(this.hash);
@@ -26,9 +37,29 @@ $(document).ready(function() {
         }, 1000);
     });
 
+});
+
+
+
+function loadJquery() {
+    $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    });
+
+    $('.content-post-content-text_title a').each(function() {
+        var idPost = $(this).attr('idPost');
+        $(this).attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
+        $('.content-post-content-image a').attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
+    });
+
     // collapse-content
-
-
     $(".accordion-set > a").on("click", function() {
         if ($(this).hasClass("active")) {
             $(this).removeClass("active");
@@ -51,10 +82,9 @@ $(document).ready(function() {
             $(".accordion-content").slideUp(200);
             $(this)
                 .siblings(".accordion-content")
-                .slideDown(200);
+                .slideDown(300);
         }
     });
-
 
     $("#collapse-content").on({
         click: function() {
@@ -63,36 +93,27 @@ $(document).ready(function() {
             } else if ($(this).html() == '<i class="fas fa-expand-arrows-alt"></i> Mở rộng nội dung') {
                 $(this).html('<i class="fas fa-compress-arrows-alt"></i> Thu gọn nội dung')
             }
-            $('.content-post-content-list').toggleClass('height70px', 300);
-            $('.content-post-content-image').toggleClass('width10', 700);
             $('.content-post-content-image img').css('height', 'auto');
-            $('.content-post-content-text').toggleClass('width90p', 700);
-            $('.content-post-content-text_summaryh').fadeToggle();
+            $('.content-post-content-text_summaryh').fadeToggle(0);
+            $('.content-post-content-image').toggleClass('width10', 1000);
+            $('.content-post-content-text').toggleClass('width90p', 1000);
+            $('.content-post-content-list').toggleClass('height70px', 1000);
         }
     });
 
-    $('.accordion-content li a').each(function() {
-        var idCatalog = $(this).attr('idCatalog');
-        console.log(idCatalog);
-        $(this).attr('href', 'dungdqps08542.vn/post.php?idCatalog=' + idCatalog);
-    })
-
-    $('.content-post-content-text_title a').each(function() {
-        var idPost = $(this).attr('idPost');
-        $(this).attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
-        $('.content-post-content-image a').attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
+    $('.accordion-set a').click(function() {
+        var href = 'page/' + ($(this).attr('href'));
+        $('.content').load(href, function() {
+            $('div.content').hide(0).fadeIn(800);
+        });
+        return false;
     });
 
-    $('.content-post-content-list .content-post-content-text_title a').each(function() {
-        var title = $(this).text();
-        $(this).parent().parent().parent().attr('title', title);
-    })
+}
 
-
-});
-
-
-
+function loadData() {
+    $('div.main').hide().fadeIn(800);
+}
 
 
 // Cập nhật đồng hồ
