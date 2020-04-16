@@ -181,8 +181,7 @@ header {
     float: left;
     line-height: 80px;
     text-align: left;
-    text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 500;
     font-size: larger;
     color: white;
 }
@@ -210,11 +209,15 @@ header {
     letter-spacing: 1.5px;
 }
 
+
+/* 
 @font-face {
     font-family: 'DIGITAL';
     src: url('https://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF');
-}
+} */
 
+
+/* 
 .digital-clock {
     margin: auto;
     width: 115px;
@@ -225,6 +228,11 @@ header {
     background: linear-gradient(90deg, #000, #555);
     margin-top: 16px;
     padding: 5px;
+} */
+
+#wrap-container-login {
+    box-shadow: 0px 0px 15px #333;
+    margin: 0px auto;
 }
 
 
@@ -336,11 +344,11 @@ header {
     text-decoration: none;
 }
 
-.search-btn{
+.search-btn {
     cursor: pointer;
 }
 
-.search-btn:hover{
+.search-btn:hover {
     font-size: 20px;
 }
 
@@ -385,9 +393,10 @@ header {
     box-shadow: 0px 0px 20px white;
 }
 
-.accordion-content li a i{
+.accordion-content li a i {
     margin-right: 6px;
 }
+
 .nav-menu {
     padding: 0px 0px 0px 30px;
     font-size: 18px;
@@ -952,4 +961,8 @@ img:hover {
     left: 50%;
     margin-top: -75px;
     margin-left: -75px;
+}
+
+#container-login50 {
+    margin: 50px;
 }
