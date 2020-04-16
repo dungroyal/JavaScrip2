@@ -209,27 +209,6 @@ header {
     letter-spacing: 1.5px;
 }
 
-
-/* 
-@font-face {
-    font-family: 'DIGITAL';
-    src: url('https://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF');
-} */
-
-
-/* 
-.digital-clock {
-    margin: auto;
-    width: 115px;
-    border: 2px solid #1ff300c4;
-    border-radius: 4px;
-    text-align: center;
-    font: 20px 'DIGITAL', Helvetica;
-    background: linear-gradient(90deg, #000, #555);
-    margin-top: 16px;
-    padding: 5px;
-} */
-
 #wrap-container-login {
     box-shadow: 0px 0px 15px #333;
     margin: 0px auto;
@@ -241,6 +220,7 @@ header {
 .main {
     width: 1200px;
     margin: 0px auto;
+    min-height: 100vh;
 }
 
 
@@ -965,4 +945,93 @@ img:hover {
 
 #container-login50 {
     margin: 50px;
+}
+
+
+/* Galery */
+
+#show-gallery {
+    float: right;
+    font-size: 0.8em;
+    font-weight: normal;
+    height: 100%;
+    cursor: pointer;
+}
+
+.heading-gallery {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.gallery-image {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-image img {
+    height: 250px;
+    width: 350px;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+    object-fit: cover;
+}
+
+.img-box {
+    box-sizing: content-box;
+    margin: 10px;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+    height: 250px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-box:hover {
+    cursor: pointer;
+}
+
+.caption>p:nth-child(2) {
+    font-size: 0.8em;
+}
+
+.opacity-low {
+    opacity: 0.5;
 }

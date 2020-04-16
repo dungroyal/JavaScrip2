@@ -37,12 +37,6 @@ $(document).ready(function() {
         }, 1000);
     });
 
-    // var title = $('.content-post-title-detail').html();
-    // if (title == undefined) {
-    //     $('title').html("Đoàn Quốc Dũng | PS08542");
-    // } else {
-    //     $('title').html(title + " | Đoàn Quốc Dũng");
-    // }
 
 });
 
@@ -112,6 +106,17 @@ function loadJquery() {
         });
         return false;
     });
+
+    // Hình ảnh đẹp
+
+    $(".img-box .transparent-box").dblclick(
+        function() {
+            $(this).parent().toggle(1000);
+        }
+    );
+    $("#show-gallery").click(function() {
+        $(".img-box").show(1000);
+    })
 }
 
 function loadJquery2() {
