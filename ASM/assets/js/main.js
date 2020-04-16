@@ -43,9 +43,12 @@ $(document).ready(function() {
 function loadJquery() {
     $('.content-post-content-text_title a').each(function() {
         var idPost = $(this).attr('idPost');
+        var title = $(this).html();
         $(this).attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
-        $('.content-post-content-image a').attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
+        $(this).parent().parent().siblings().children().attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost);
+        $(this).parent().parent().siblings().children().attr('title', title);
     });
+
     $("#collapse-content").on({
         click: function() {
             if ($(this).html() == '<i class="fas fa-compress-arrows-alt"></i> Thu gọn nội dung') {
@@ -122,8 +125,10 @@ function loadJquery() {
 function loadJquery2() {
     $('.content-post-content-text_title a').each(function() {
         var idPost = $(this).attr('idPost');
+        var title = $(this).html();
         $(this).attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
-        $('.content-post-content-image a').attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost)
+        $(this).parent().parent().siblings().children().attr('href', 'dungdqps08542.vn/post.php?idPost=' + idPost);
+        $(this).parent().parent().siblings().children().attr('title', title);
     });
     $("#collapse-content").on({
         click: function() {
