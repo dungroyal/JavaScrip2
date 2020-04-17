@@ -3,6 +3,8 @@ $(window).on('load', function(event) {
     $('.load').fadeOut(500);
 });
 
+
+
 $(document).ready(function() {
 
     $('.header-right-menu a, .form-btn-dk-dn').click(function() {
@@ -10,7 +12,7 @@ $(document).ready(function() {
         var title = $(this).html();
         $('title').html(title + " | Đoàn Quốc Dũng")
         $.get(href, "", function(data) {
-            $('div.main').html(data);
+            $('div.main').html(data, loadData());
             loadJquery();
         });
         return false;
@@ -233,3 +235,7 @@ function clockUpdate() {
 
 
 })(jQuery);
+
+function loadData() {
+    $('div.content').hide().show(2000);
+}
