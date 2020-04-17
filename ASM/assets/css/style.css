@@ -514,7 +514,7 @@ section {
     box-sizing: border-box;
     text-align: left;
     font: bold 16px sans-serif;
-    height: 200px;
+    min-height: 230px;
     clear: both;
     width: 100%;
     box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
@@ -1034,4 +1034,19 @@ img:hover {
 
 .opacity-low {
     opacity: 0.5;
+}
+
+#status-dangky-username,
+#status-dangky-pass {
+    width: 100%;
+    text-align: center;
+    margin-top: 11px;
+    font-weight: 600;
+    color: red;
+    font-size: 1.1em;
+}
+
+#status-dangky-username i,
+#status-dangky-pass i {
+    margin-right: 2px;
 }

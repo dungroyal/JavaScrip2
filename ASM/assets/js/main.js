@@ -7,7 +7,7 @@ $(window).on('load', function(event) {
 
 $(document).ready(function() {
 
-    $('.header-right-menu a, .form-btn-dk-dn').click(function() {
+    $('.header-right-menu a, .footer-links a').click(function() {
         var href = 'page/' + ($(this).attr('href'));
         var title = $(this).html();
         $('title').html(title + " | Đoàn Quốc Dũng")
@@ -104,7 +104,7 @@ function loadJquery() {
         }
     });
 
-    $('.accordion-set a').click(function() {
+    $('.accordion-set a,#loadDN').click(function() {
         var href = 'page/' + ($(this).attr('href'));
         $('.content').load(href, function() {
             loadJquery2();
@@ -222,7 +222,6 @@ function clockUpdate() {
 
     function showValidate(input) {
         var thisAlert = $(input).parent();
-
         $(thisAlert).addClass('alert-validate');
     }
 

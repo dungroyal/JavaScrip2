@@ -1,67 +1,53 @@
 <div class="limiter">
     <div class="container-login50 " id="container-login50">
         <div class="wrap-login100 p-l-60 p-r-60 p-t-50 p-b-30 m-t-20  m-b-46" id="wrap-container-login">
-            <form class="login100-form validate-form flex-sb flex-w">
-                <span class="login100-form-title p-b-20">
-                            Đăng kí tài khoản với
-                        </span>
+            <form class="login100-form validate-form flex-sb flex-w" id="form-dangky">
+                <span class="login100-form-title p-b-20">Đăng kí tài khoản với</span>
 
                 <a href="#" class="btn-face m-b-20">
-                    <img src="assets/images/icons/icon-fb.png" alt="Facebook"> &nbsp;&nbsp; Facebook
+                    <img src="assets/images/icons/icon-fb.png" alt="Facebook"> &nbsp;&nbsp; Phết búc
                 </a>
 
                 <a href="#" class="btn-google m-b-20">
-                    <img src="assets/images/icons/icon-google.png" alt="Google"> Google
+                    <img src="assets/images/icons/icon-google.png" alt="Google"> Gu gồ
                 </a>
-                <span class="login100-form-title p-b-20">
-                            Hoặc
-                        </span>
+                <span class="login100-form-title p-b-20">Hoặc</span>
                 <div class="p-t-5 p-b-9">
-                    <span class="txt1">
-                                Tên đăng nhập
-                            </span>
+                    <span class="txt1">Tên đăng nhập</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="username" autocomplete="off" autocapitalize="off" autocorrect="off">
+                    <input class="input100" type="text" id="username" name="username">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="p-t-13 p-b-9">
-                    <span class="txt1">
-                                Mật khẩu
-                            </span>
+                    <span class="txt1">Mật khẩu</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass" autocomplete="off" autocapitalize="off" autocorrect="off">
+                    <input class="input100" type="password" id="new-password" autocomplete='off' name="new-pass">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="p-t-13 p-b-9">
-                    <span class="txt1">
-                                Mật lại khẩu
-                            </span>
+                    <span class="txt1">Mật lại khẩu</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass">
+                    <input class="input100" type="password" id="re-new-password" autocomplete='off' name="re-new-pass">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="p-t-13 p-b-9">
-                    <span class="txt1">
-                                Ngày sinh
-                            </span>
+                    <span class="txt1">Ngày sinh</span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="date" name="pass">
+                    <input class="input100" type="date" id="datebtd" name="datebtd">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="p-t-13 p-b-9">
-                    <span class="txt1">
-                                Nghề nghiệp
-                            </span>
+                    <span class="txt1">Nghề nghiệp</span>
                 </div>
-                <select class="wrap-input100 w-full p-t-13 p-l-13 p-r-13 p-b-13" id="nghenghiep">
+                <select class="wrap-input100 w-full p-t-13 p-l-13 p-r-13 p-b-13" id="nghenghiep" name="work">
                             <option value="volvo">Học sinh</option>
                             <option value="saab">Sinh viên</option>
                             <option value="opel">Giáo viên</option>
@@ -69,21 +55,66 @@
                           </select>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn">
-                                Đăng nhập
-                            </button>
+                    <button class="login100-form-btn" id="btn-dangky" disabled="true">Đăng ký</button>
                 </div>
 
                 <div class="w-full text-center p-t-55">
-                    <span class="txt2">
-                                Đã là thành viên?
-                            </span>
+                    <span class="txt2">Đã là thành viên?</span>
 
-                    <a href="dangnhap.html" class="txt2 bo1 form-btn-dk-dn">
-                                Đăng nhập ngay
-                            </a>
+                    <a href="dangnhap.html" class="txt2 bo1 form-btn-dk-dn" id="loadDN">Đăng nhập ngay </a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $("#username").on({
+            blur: function() {
+                var data = $("#form-dangky").serialize();
+                $('#status-dangky-username').remove();
+                $.post("assets/xuly.php", data,
+                    function(DataBack) {
+                        if (DataBack.substring(0, 1) == '1') {
+                            status_username = "<span id='status-dangky-username'><i class='fas fa-times-circle'></i> Tên đăng nhập đã được sử dụng.</span>";
+                            $('#username').parent().after(status_username);
+                            $("#btn-dangky").css('opacity', '.5');
+                        } else {
+                            $("#btn-dangky").css('opacity', '1');
+                        }
+                    }
+                );
+            },
+        });
+        $("#re-new-password").on({
+            blur: function() {
+                var data = $("#form-dangky").serialize();
+                $('#status-dangky-pass').remove();
+                $.post("assets/xuly.php", data,
+                    function(DataBack) {
+                        if (DataBack.substring(1, 2) == '1') {
+                            status_pass = "<span id='status-dangky-pass'><i class='fas fa-times-circle'></i>Hai mật khẩu không trùng khớp</span>";
+                            $('#re-new-password').parent().after(status_pass);
+                            $("#btn-dangky").css('opacity', '.5');
+                        } else {
+                            $("#btn-dangky").css('opacity', '1');
+                        }
+                    }
+                );
+            },
+        });
+        $('.input100').on({
+            click: function() {
+                $(this).css({
+                    'background': '#cef38540',
+                    'border-radius': '3px'
+                });
+            },
+            blur: function() {
+                $(this).css('background', 'transparent');
+            }
+        });
+    });
+</script>
