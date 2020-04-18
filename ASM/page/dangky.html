@@ -5,13 +5,12 @@
                 <span class="login100-form-title p-b-20">Đăng kí tài khoản với</span>
 
                 <a href="#" class="btn-face m-b-20">
-                    <img src="assets/images/icons/icon-fb.png" alt="Facebook"> &nbsp;&nbsp; Phết búc
+                    <img src="assets/images/icons/icon-fb.png" alt="Facebook"> &nbsp;&nbsp; Facebook
                 </a>
 
                 <a href="#" class="btn-google m-b-20">
-                    <img src="assets/images/icons/icon-google.png" alt="Google"> Gu gồ
+                    <img src="assets/images/icons/icon-google.png" alt="Google"> Google
                 </a>
-                <span class="login100-form-title p-b-20">Hoặc</span>
                 <div class="p-t-5 p-b-9">
                     <span class="txt1">Tên đăng nhập</span>
                 </div>
@@ -39,8 +38,8 @@
                 <div class="p-t-13 p-b-9">
                     <span class="txt1">Ngày sinh</span>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="date" id="datebtd" name="datebtd">
+                <div class="wrap-input100" data-validate="Password is required">
+                    <input class="input100" type="text" id="datepicker" size="30" name="datebtd">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -67,54 +66,3 @@
         </div>
     </div>
 </div>
-
-
-<script>
-    $(document).ready(function() {
-        $("#username").on({
-            blur: function() {
-                var data = $("#form-dangky").serialize();
-                $('#status-dangky-username').remove();
-                $.post("assets/xuly.php", data,
-                    function(DataBack) {
-                        if (DataBack.substring(0, 1) == '1') {
-                            status_username = "<span id='status-dangky-username'><i class='fas fa-times-circle'></i> Tên đăng nhập đã được sử dụng.</span>";
-                            $('#username').parent().after(status_username);
-                            $("#btn-dangky").css('opacity', '.5');
-                        } else {
-                            $("#btn-dangky").css('opacity', '1');
-                        }
-                    }
-                );
-            },
-        });
-        $("#re-new-password").on({
-            blur: function() {
-                var data = $("#form-dangky").serialize();
-                $('#status-dangky-pass').remove();
-                $.post("assets/xuly.php", data,
-                    function(DataBack) {
-                        if (DataBack.substring(1, 2) == '1') {
-                            status_pass = "<span id='status-dangky-pass'><i class='fas fa-times-circle'></i>Hai mật khẩu không trùng khớp</span>";
-                            $('#re-new-password').parent().after(status_pass);
-                            $("#btn-dangky").css('opacity', '.5');
-                        } else {
-                            $("#btn-dangky").css('opacity', '1');
-                        }
-                    }
-                );
-            },
-        });
-        $('.input100').on({
-            click: function() {
-                $(this).css({
-                    'background': '#cef38540',
-                    'border-radius': '3px'
-                });
-            },
-            blur: function() {
-                $(this).css('background', 'transparent');
-            }
-        });
-    });
-</script>

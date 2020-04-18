@@ -708,8 +708,14 @@ section {
     display: inline-block;
     position: relative;
     text-transform: uppercase;
-    padding: 0 15px 0 20px;
+    padding: 0 15px 0 0px;
     margin: 6px 0 4px 0;
+}
+
+.content-post-title-detail i {
+    font-size: .8em;
+    margin-right: 8px;
+    color: #9b0909;
 }
 
 .content-post-title-control {
@@ -772,6 +778,8 @@ img:hover {
     float: left;
 }
 
+
+/* 
 .content-post-title-detail:before {
     content: '';
     position: absolute;
@@ -783,7 +791,7 @@ img:hover {
     -khtml-transform: skew(-20deg);
     transform: skew(-20deg);
     background-color: #dd3333;
-}
+} */
 
 .content-post-title {
     padding: 20px 0px 0px 20px;
@@ -991,6 +999,7 @@ img:hover {
     color: white;
     position: relative;
     background-color: white;
+    border-radius: 2px;
 }
 
 .caption {
@@ -1049,4 +1058,86 @@ img:hover {
 #status-dangky-username i,
 #status-dangky-pass i {
     margin-right: 2px;
+}
+
+#show-gallery:hover {
+    transform: scale(1.2);
+    animation-duration: 1ms;
+}
+
+
+/* Search  */
+
+.nav-search {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.searchbox {
+    transition: border .2s linear;
+    font-size: 14px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    padding: 8px 32px 8px 12px;
+    height: 40px;
+    border: 2px solid #51afedad;
+    border-radius: 5px;
+    outline: none;
+    font-weight: bold;
+}
+
+.searchbox input::placeholder {
+    color: rgb(189, 255, 6);
+}
+
+.searchbtn {
+    position: absolute;
+    font-size: 20px;
+    color: #686262;
+    background-color: transparent;
+    border: none;
+    right: 10px;
+    top: 0px;
+    outline: none;
+    padding: 4px;
+}
+
+#box-sreach-nav {
+    margin-top: 20px;
+}
+
+.ui-menu-item {
+    padding-bottom: 5px;
+}
+
+.ui-widget.ui-widget-content {
+    box-shadow: 0px 0px 1px #333;
+}
+
+.ui-datepicker-year {
+    padding: 2px;
+    margin-left: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.status_location {
+    width: 150px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.status_location .digital-clock {
+    font-size: 18px;
+}
+
+.status_location .location {
+    font-size: 15px;
+}
+
+span#term {
+    margin-left: 10px;
 }
