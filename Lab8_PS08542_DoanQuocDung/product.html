@@ -1,0 +1,95 @@
+<div class="card-columns">
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone 11 64GB
+        </div>
+        <div class="card-body">
+            <img src="images/1.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="1">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            21.990.000 VNĐ
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone 11 Pro MAX 256GB
+        </div>
+        <div class="card-body">
+            <img src="images/2.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="2">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            33.890.000 VNĐ
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone X 256GB
+        </div>
+        <div class="card-body">
+            <img src="images/3.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="3">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            24.690.000 VNĐ
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone 11 512GB
+        </div>
+        <div class="card-body">
+            <img src="images/4.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="4">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            40.190.000 VNĐ
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone 11 Pro Max 512GB
+        </div>
+        <div class="card-body">
+            <img src="images/5.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="5">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            36.990.000 VNĐ
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-header">
+            iPhone XSMAX 512GB
+        </div>
+        <div class="card-body">
+            <img src="images/6.png"><br>
+            <a href="#" class="btn btn-primary mt-3" idSP="6">Chọn sản phẩm</a>
+        </div>
+        <div class="card-footer text-muted">
+            32.990.000 VNĐ
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('div.card div.card-body a').click(function() {
+            var urlImage = $(this).siblings().attr('src');
+            var namePro = $(this).parent().siblings().html();
+            var pricePro = $(this).parent().next().html();
+            $('div#cart').append('<div class="list-cart"><div class="imgPro"> <img src="' + urlImage + '" alt="' + namePro + '"></div><div class="product-detail"><div class="namePro">' + namePro + '</div> <div class="pricePro">' + pricePro + '</div></div></div> <hr>');
+            $('#cart_container h4').css('border-radius', '5px 5px 0px 0px');
+            $('#cart').css('border-radius', '0px 0px 5px 5px');
+            console.log(urlImage);
+            return false;
+        });
+    });
+</script>

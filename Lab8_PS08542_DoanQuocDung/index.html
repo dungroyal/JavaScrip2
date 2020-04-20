@@ -1,0 +1,404 @@
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    a {
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    header {
+        height: 200px;
+        background-color: olivedrab;
+        position: relative
+    }
+    
+    article,
+    aside {
+        min-height: 400px;
+    }
+    
+    article {
+        background-color: cornsilk;
+    }
+    
+    aside {
+        background-color: darkslategray;
+    }
+    
+    #ratvui .list-menu {
+        display: block;
+        padding: 8px;
+        font-size: 1.2em
+    }
+    
+    #ratvui a:nth-child(1) i {
+        color: rgb(145, 121, 29);
+        margin-right: 10px
+    }
+    
+    #ratvui a:nth-child(2) i {
+        color: darkorange;
+        margin-right: 10px
+    }
+    
+    #ratvui a:nth-child(3) i {
+        color: deeppink;
+        margin-right: 10px
+    }
+    
+    #ratvui a:nth-child(4) i {
+        color: gold;
+        margin-right: 10px;
+    }
+    
+    #ratvui a:nth-child(5) i {
+        color: gold;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    
+    h4.bg-primary.text-white.text-center.py-2 {
+        margin: 0px auto;
+        /* border-radius: 5px 5px 0px 0px; */
+        border-radius: 2px;
+    }
+    
+    span.list-cart {
+        padding: 10px;
+        font-size: 15px;
+        display: inline-block;
+    }
+    
+    .header_left {
+        position: absolute;
+        left: 10px;
+        bottom: 20px;
+        letter-spacing: 0.3em;
+        color: white;
+        font-weight: 900;
+        text-transform: uppercase
+    }
+    
+    .card img {
+        height: 180px;
+        margin: auto;
+    }
+    
+    .card-columns {
+        padding: 15px 0px;
+    }
+    
+    #login .container #login-row {
+        padding: 0px;
+    }
+    
+    #login .container #login-row #login-column #login-box {
+        margin-top: 120px;
+        width: 100%;
+        height: 320px;
+        border: 1px solid #9C9C9C;
+        background-color: #EAEAEA;
+    }
+    
+    #login .container #login-row #login-column #login-box #login-form {
+        padding: 0px;
+    }
+    
+    #login .container #login-row #login-column #login-box #login-form #register-link {
+        margin-top: -85px;
+    }
+    
+    #login-column {
+        padding: 0px;
+    }
+    
+    #datepicker {
+        display: flex;
+    }
+    
+    .date {
+        margin: 0px 0px 50px 0px;
+    }
+    
+    div#cart {
+        background-color: white;
+        margin: 0px auto;
+    }
+    
+    .list-cart {
+        padding: 10px;
+        display: inline-block;
+    }
+    
+    .imgPro {
+        float: left;
+        width: 20%;
+        height: auto;
+    }
+    
+    .imgPro img {
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .product-detail {
+        width: 80%;
+        display: grid;
+        padding: 5px 0px 0px 9px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .nav-accordion-container {
+        position: relative;
+        max-width: 500px;
+        height: auto;
+        margin: 10px auto;
+    }
+    
+    .nav-accordion-container h2 {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+    }
+    
+    .accordion-set {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: #f5f5f5;
+        border-radius: 2px;
+    }
+    
+    .accordion-set>a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+        border-bottom: 1px solid #ddd;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+    
+    .accordion-set>a i {
+        float: right;
+        margin-top: 2px;
+    }
+    
+    .accordion-content li {
+        list-style: none;
+        color: #555;
+    }
+    
+    .accordion-content {
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ddd;
+        display: none;
+    }
+    
+    .accordion-content li a {
+        width: 100%;
+        list-style: none;
+        color: #555;
+        display: block;
+        padding: 10px 0px 5px 20px;
+    }
+    
+    .accordion-set>a.active {
+        background-color: #3399cc;
+        color: #fff;
+    }
+    
+    .fa-plus {
+        color: #555;
+    }
+</style>
+
+
+<div class="container">
+    <header class="row">
+        <div class="header_left">
+            <h2>Quản lý công việc</h2>
+            <h6>Nhanh chóng, hợp tác, hiệu quả</h6>
+        </div>
+        <img class="ml-auto" src="images/BannerApple.png">
+    </header>
+    <nav class="row"> </nav>
+    <div class="row">
+        <aside class="col-sm-3" id="ratvui">
+            <a href="javascript:void(0)" class="list-menu"><i class="fas fa-list-ul"></i></i>Danh Mục</a>
+            <a href="javascript:void(0)" class="list-menu"><i class="fas fa-undo-alt"></i>Đổi trả</a>
+            <a href="javascript:void(0)" class="list-menu"><i class="fas fa-hand-holding-heart"></i>Bảo hành</a>
+            <a href="tag.html" class="list-menu"><i class="fas fa-tags"></i>TAG</a>
+            <a href="product.html" class="list-menu"><i class="fas fa-box-open"></i>Sản phẩm</a>
+            <div id="cart_container" class="m-n2">
+                <h4 class="bg-primary text-white text-center py-2">Giỏ hàng</h4>
+                <div id="cart"></div>
+            </div>
+
+            <div class="form-group text-center mt-4">
+                <input type="button" id="opener" name="btn" value="Đăng nhập" class="btn btn-primary">
+            </div>
+            <div class="date">
+                <div id="datepicker"></div>
+            </div>
+
+            <div id="dialog" title="Đăng nhập"></div>
+
+            <div class="nav-accordion-container">
+                <div class="accordion-set">
+                    <a href="javascript:void(0)" idcatalog="12">Các phòng ban <i class="fa fa-plus"></i></a>
+                    <div class="accordion-content">
+                        <li>
+                            <a href="javascript:void(0)" idcatalog="312"><i class="fas fa-briefcase"></i>Phòng kinh doanh</a>
+                            <a href="javascript:void(0)" idcatalog="312"><i class="fas fa-sitemap"></i>Phòng Tổng hợp</a>
+                            <a href="javascript:void(0)" idcatalog="132"><i class="fas fa-drafting-compass"></i>Phòng kỉ thuật</a>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-calculator"></i>Phòng Kế toán</a>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="accordion-set">
+                    <a href="javascript:void(0)" idcatalog="13">Tài liệu ISO<i class="fa fa-plus"></i></a>
+                    <div class="accordion-content">
+                        <li>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-clipboard-list"></i>Các quy định</a>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-clipboard-list"></i>Các quy tình</a>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-clipboard-list"></i>Các biểu mẫu</a>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="accordion-set">
+                    <a href="javascript:void(0)" idcatalog="15">Các báo cáo<i class="fa fa-plus"></i></a>
+                    <div class="accordion-content">
+                        <li>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-clipboard-list"></i>Sản lượng hôm nay</a>
+                            <a href="javascript:void(0)" idcatalog="112"><i class="fas fa-clipboard-list"></i>Tiến độ sản xuất</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <article class="col-9" id="hanhphuc">
+            <h1>Trang chủ</h1>
+        </article>
+
+
+    </div>
+    <footer class="row">
+        <p class="m-auto text-center text-white">Mã SV - Họ tên <br> Email: email@CủaSV</p>
+    </footer>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        $("#ratvui a").click(function() {
+            var url = $(this).attr("href");
+            $("#hanhphuc").load(url, function() {
+                $("#hanhphuc").hide().fadeIn(600)
+            });
+            return false;
+        });
+
+        $("#dialog").dialog({
+            autoOpen: false,
+            height: 300,
+            width: 450,
+            show: {
+                effect: "blind",
+                duration: 500
+            },
+            hide: {
+                effect: "blind",
+                duration: 500
+            }
+        });
+
+        // Dialog 
+        $("#opener").on("click", function() {
+            $("#dialog").load("login.html");
+            $("#dialog").dialog("open");
+        });
+
+
+        // DATEPICKER
+        $.datepicker.regional["vi-VN"] = {
+            closeText: "Đóng",
+            prevText: "Trước",
+            nextText: "Sau",
+            currentText: "Hôm nay",
+            monthNames: ["Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", "Tháng sáu", "Tháng bảy", "Tháng tám", "Tháng chín", "Tháng mười", "Tháng mười một", "Tháng mười hai"],
+            monthNamesShort: ["Một", "Hai", "Ba", "Bốn", "Năm", "Sáu", "Bảy", "Tám", "Chín", "Mười", "Mười một", "Mười hai"],
+            dayNames: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"],
+            dayNamesShort: ["CN", "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy"],
+            dayNamesMin: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+            weekHeader: "Tuần",
+            dateFormat: "dd/mm/yy",
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: "",
+        };
+        $.datepicker.setDefaults($.datepicker.regional["vi-VN"]);
+        $("#datepicker").datepicker($.datepicker.regional["vi-VN"]);
+
+        // Accordion Jquery IU
+        $(".accordion-set > a").on("click", function() {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this)
+                    .siblings(".accordion-content")
+                    .slideUp(200);
+                $(".accordion-set > a i")
+                    .removeClass("fa-minus")
+                    .addClass("fa-plus");
+            } else {
+                $(".accordion-set > a i")
+                    .removeClass("fa-minus")
+                    .addClass("fa-plus");
+                $(this)
+                    .find("i")
+                    .removeClass("fa-plus")
+                    .addClass("fa-minus");
+                $(".accordion-set > a").removeClass("active");
+                $(this).addClass("active");
+                $(".accordion-content").slideUp(200);
+                $(this)
+                    .siblings(".accordion-content")
+                    .slideDown(300);
+            }
+        });
+
+        $('footer.row p').html("PS08542 - Đoàn Quốc Dũng <br> Email: DungdqPS08542@fpt.edu.vn");
+        $('body').css('background', 'linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4)');
+        $('header.row').css('background', 'linear-gradient(to right, #cfa414, #c21500)');
+        $('footer').css({
+            'background': 'linear-gradient(to right, #200122, #6f0000)',
+            'padding': '20px',
+            'font-size': '1.2em'
+        });
+        $('title').html("Đoàn Quốc Dũng | PS08542");
+        $('header.row img').attr('src', 'images/BannerApple.png');
+        $('header.row img').css('width', '40%');
+    });
+</script>
