@@ -181,7 +181,10 @@
                 $('header#home .header-right .header-right-menu .header-menu_list').addClass('header-menu_list__Fix');
                 $('header#home .header-left .header-left_name .status_location .location').hide();
                 $('header#home .header-left .header-left_img a img').css('width', '36px');
-                $('div.nav').css('top', '60px');
+                $('div.nav').css({
+                    'top': '60px',
+                    'transition': 'all .3s ease-in-out'
+                });
             } else {
                 $('header#home').removeClass('fixed-header');
                 $('header#home ').removeClass('visible-title');
