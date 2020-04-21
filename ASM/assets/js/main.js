@@ -326,7 +326,7 @@ function loadJquery2() {
         });
         return false;
     });
-    var title = $('.content-post-title-detail').html();
+    var title = $('.content-post-title-detail span').html();
     $('title').html(title + " | Đoàn Quốc Dũng");
 
 
