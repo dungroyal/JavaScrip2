@@ -6,19 +6,20 @@ $(window).on('load', function(event) {
 /*---------------------------------------------------------------------------------*/
 
 $(document).ready(function() {
-
-    $('.header-right-menu a, .footer-links a').click(function() {
-        var href = 'page/' + ($(this).attr('href'));
-        var title = $(this).html();
-        $('title').html(title + " | Đoàn Quốc Dũng")
-        $.get(href, "", function(data) {
-            $('.main').html(data, function() {
-                $('.main').children().hide().show(500);
+    $(document).ready(function() {
+        $(".header-menu_list a, .footer-links a").click(function() {
+            var url = $(this).attr("href");
+            var title = $(this).html();
+            $('title').html(title + " | Đoàn Quốc Dũng")
+            $("div.main").load('page/' + url, function() {
+                $("div.main").children().hide().fadeIn(500);
+                $('html, body').animate({ scrollTop: 0 }, 1000);
+                loadJquery();
             });
-            loadJquery();
+            return false;
         });
-        return false;
     });
+
 
     // Smooth Scroll to Div using jQuery
     $('a[href*=\\#]:not([href=\\#])').on('click', function() {
@@ -31,9 +32,11 @@ $(document).ready(function() {
             return false;
         }
     });
+
     //  Clock
     clockUpdate();
     setInterval(clockUpdate, 1000);
+
     // Return to top
     $("#return-to-top").click(function() {
         $('html, body').animate({
@@ -66,6 +69,8 @@ function loadJquery() {
             $('.content-post-content-list').toggleClass('height70px', 500);
         }
     });
+
+
     // Smooth Scroll to Div using jQuery
     $('a[href*=\\#]:not([href=\\#])').on('click', function() {
         var target = $(this.hash);
@@ -77,6 +82,7 @@ function loadJquery() {
             return false;
         }
     });
+
     // Accordion Jquery IU
     $(".accordion-set > a").on("click", function() {
         if ($(this).hasClass("active")) {
@@ -114,12 +120,12 @@ function loadJquery() {
         $(".img-box").show(1000);
     })
 
-
-
     // Load nội dung lần 2 
     $('.accordion-set a,#loadDN,#btn-link_dangky').click(function() {
         var href = 'page/' + ($(this).attr('href'));
         $('.content').load(href, function() {
+            $("div.content").children().hide().fadeIn(500);
+            $('html, body').animate({ scrollTop: 0 }, 1000);
             loadJquery2();
         });
         return false;
@@ -128,6 +134,8 @@ function loadJquery() {
     $('#btn-link_dangky,#loadDN').click(function() {
         var href = 'page/' + ($(this).attr('href'));
         $('div.main').load(href, function() {
+            $("div.main").children().hide().fadeIn(500);
+            $('html, body').animate({ scrollTop: 0 }, 1000);
             loadJquery2();
         });
         return false;
@@ -203,6 +211,7 @@ function loadJquery() {
             track: true
         });
     });
+
     // Đăng ký 
     $("#username").on({
         blur: function() {
@@ -224,7 +233,6 @@ function loadJquery() {
         },
     });
 
-
     $("#re-new-password").on({
         blur: function() {
             var data = $("#form-dangky").serialize();
@@ -242,6 +250,7 @@ function loadJquery() {
             );
         },
     });
+
     $('.input100').on({
         click: function() {
             $(this).css({
@@ -253,6 +262,7 @@ function loadJquery() {
             $(this).css('background', 'transparent');
         }
     });
+
     $('#btn-dangky').click(function() {
         if ($('#username').val() == "") {
             $('#username').attr('placeholder', 'Tên đăng nhập không được để trống!');
@@ -319,6 +329,8 @@ function loadJquery2() {
         }
     });
 
+
+
     $('#btn-link_dangky,#loadDN').click(function() {
         var href = 'page/' + ($(this).attr('href'));
         $('div.main').load(href, function() {
@@ -328,11 +340,10 @@ function loadJquery2() {
     });
     var title = $('.content-post-title-detail span').html();
     $('title').html(title + " | Đoàn Quốc Dũng");
-
-
 }
 
 // Cập nhật đồng hồ
+
 function clockUpdate() {
     var date = new Date();
     $('.digital-clock').css({ 'color': '#fff', 'text-shadow': '0 0 6px #ff0' });
@@ -395,5 +406,4 @@ function hienthoitiet(url) {
         $('#term').html(temp + '°C');
         $('#city').html(' ' + tp);
     });
-
 }

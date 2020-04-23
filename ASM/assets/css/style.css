@@ -2,7 +2,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Baloo Paaji 2', cursive;
-    transition: all .3s ease-in-out;
+    /* transition: all .3s ease-in-out; */
 }
 
 html,
@@ -155,7 +155,12 @@ header {
     background: linear-gradient(to right, #cfa414, #c21500);
     text-align: center;
     margin-bottom: 15px;
-    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.38);
+    box-shadow: 0px 5px 10px 0px rgba(69, 67, 96, 0.38);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all .3s ease-in-out;
 }
 
 .header-left {
@@ -221,6 +226,7 @@ header {
     width: 1200px;
     margin: 0px auto;
     min-height: 100vh;
+    padding-top: 1px;
 }
 
 
@@ -389,6 +395,7 @@ header {
 
 .nav-menu ul li:hover {
     margin-left: 15px;
+    transition: all .3s ease-in-out;
 }
 
 .nav-menu ul i {
@@ -1153,4 +1160,35 @@ p#status-login-sucsset {
 
 p#status-login-sucsset i {
     margin-right: 10px;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 40px;
+    transition: all .3s ease-in-out;
+}
+
+.visible-title {
+    visibility: visible;
+}
+
+.header-menu_list__Fix {
+    font-weight: 500;
+    line-height: 40px;
+    font-size: .9em;
+    transition: all .3s ease-in-out;
+}
+
+.header-left_img__Fix {
+    width: 37px;
+    line-height: 51px;
+    margin-top: 2px;
+}
+
+.main__Fix {
+    margin-top: 95px;
 }

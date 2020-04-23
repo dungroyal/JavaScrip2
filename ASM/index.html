@@ -7,25 +7,15 @@
     <title>Đoàn Quốc Dũng | PS08542</title>
     <link rel="icon" href="assets/images/avatar.png" type="image/png" sizes="16x16">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="assets/js/main.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/util.css">
 
-<style>
-    .fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    z-index: 100;
-    height: 50px;
-}
-.visible-title {
-    visibility: visible;
-}
-</style>
 <body class="preloading">
     <div class="load">
         <img src="assets/images/loader.gif">
@@ -52,13 +42,12 @@
             </div>
         </div>
     </header>
-    <div class="menu"></div>
     <div class="main">
         <div class="nav">
             <div class="d-flex flex-column">
                 <div class="nav-menu">
                     <ul>
-                        <li class=""><a href="#home"><i class="fas fa-home"></i><span>Trang chủ</span></a></li>
+                        <li class=""><a href="index.html"><i class="fas fa-home"></i><span>Trang chủ</span></a></li>
                         <li class=""><a href="#about"><i class="fas fa-address-card"></i><span>Giới thiệu</span></a></li>
                     </ul>
                 </div>
@@ -181,24 +170,36 @@
     </footer>
     <a href="javascript:" id="return-to-top" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="assets/js/main.js"></script>
-
-</html>
-
 
 <script>
-    $(document).ready(function () {
-            $(window).scroll(function(){
-            if ($(window).scrollTop() >= 200) {
+    $(document).ready(function() {
+        $('header#home').next().addClass('main__Fix');
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= 150) {
                 $('header#home').addClass('fixed-header');
                 $('header#home div').addClass('visible-title');
-            }
-            else {
+                $('header#home .header-right .header-right-menu .header-menu_list').addClass('header-menu_list__Fix');
+                $('header#home .header-left .header-left_name .status_location .location').hide();
+                $('header#home .header-left .header-left_img a img').css('width', '36px');
+                $('div.nav').css({
+                    'top': '60px',
+                    'transition': 'all .3s ease-in-out'
+                });
+            } else {
                 $('header#home').removeClass('fixed-header');
-                $('header#home div').removeClass('visible-title');
+                $('header#home ').removeClass('visible-title');
+                $('header#home .header-right .header-right-menu .header-menu_list').removeClass('header-menu_list__Fix');
+                $('header#home .header-left .header-left_name .status_location .location').slideDown(100);
+                $('header#home .header-left .header-left_img a img').show();
+                $('header#home .header-left .header-left_img a img').css({
+                    'width': '75px',
+                    'transition': 'all .3s ease-in-out'
+                });
+                $('div.nav').css('top', '95px');
             }
         });
+
     });
 </script>
+
+</html>
