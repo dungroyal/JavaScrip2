@@ -3,6 +3,10 @@
 "editor.fontFamily": "Consolas",
  
 // Controls the font size.
-"editor.fontSize": 14
+"editor.fontSize": 14,
+"sync.autoDownload": true,
+"sync.autoUpload": true,
+"sync.forceDownload": true,
+"sync.forceUpload": true
 }
 
