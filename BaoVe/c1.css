@@ -1,0 +1,11 @@
+#ttl #path {
+	background-color:#036;color:#FFF; padding:5px; text-transform:uppercase; font-size:16px;}
+#ttl .row_tin {border-bottom: solid 1px #003366; padding-right:5px; min-height:120px;}
+#ttl .xemtiep {text-align: right; margin:0}
+#ttl .xemtiep a {color: #990033;text-decoration: none;}
+#ttl .xemtiep a:hover {color: #006699;text-decoration: underline;}
+#ttl .tieude{ font-weight:bold; margin-top:5px; margin-bottom:5px;}
+#ttl .tomtat { text-align:justify; margin-top:5px; margin-bottom:5px;}
+#ttl .ngay{ margin-top:5px; margin-bottom:5px; color:#003333; font-style:italic}
+
+

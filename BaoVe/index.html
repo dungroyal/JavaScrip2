@@ -1,0 +1,129 @@
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<link rel="stylesheet" href="fw.css">
+<style>
+    header {
+        height: 200px;
+        background-color: olivedrab;
+        position: relative;
+    }
+    
+    article,
+    aside {
+        min-height: 400px;
+    }
+    
+    article {
+        background-color: cornsilk;
+    }
+    
+    aside {
+        background-color: darkslategray;
+    }
+    
+    .header_left {
+        top: 80px;
+        left: 40px;
+        position: absolute;
+        color: white;
+        . background: i;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+
+        $('#cottrai a').click(function() {
+            var href = $(this).attr('href');
+            $.get(href, "", function(d) {
+                $('#yeuthuong').html(d, loadDATA());
+                loadJquery();
+            });
+            return false;
+        });
+
+
+        $('#cottrai a').css({
+            'display': 'block',
+            'padding': '8px',
+            'font-size': '1.2em'
+        });
+
+        $('#cottrai a').eq(0).prepend('<i class="fas fa-scroll"></i>');
+        $('#cottrai a').eq(1).prepend('<i class="fas fa-book-reader"></i>');
+        $('#cottrai a').eq(2).prepend('<i class="fas fa-users"></i>');
+        $('#cottrai a').eq(3).prepend('<i class="fas fa-running"></i>');
+
+
+        $('#cottrai a i').eq(0).css('color', 'red');
+        $('#cottrai a i').eq(1).css('color', 'yellow');
+        $('#cottrai a i').eq(2).css('color', 'green');
+        $('#cottrai a i').eq(3).css('color', '#fffff');
+
+        $('#cottrai a i').css('width', '35px');
+        $('#cottrai a').css('color', '#fffff');
+
+        $('footer').html('<a>Đoàn Quốc Dũng - PS08542 <br> Dungdqps08542@fpt.edu.vn</a>');
+        $('footer a').css({
+            'color': '#ffffff',
+            'text-align': 'center',
+            'width': '100%',
+            'padding': '20px',
+        });
+
+
+    });
+
+    function loadDATA() {
+        $('#yeuthuong').hide().fadeIn(800);
+    }
+
+
+    function loadJquery() {
+        $('#ttl .row_tin:even').css('background-image', 'url("1.jpg")');
+        $('#ttl .row_tin:odd').css('background-image', 'url("2.jpg")');
+
+        $('#ttl .row_tin h2').css({
+            'color': 'red',
+            'font-size': '1.3em'
+        });
+
+        $('#ttl .row_tin').css({
+            'padding': '5px'
+        });
+    }
+</script>
+
+<div class="container">
+    <header class="row">
+        <div class="header_left">
+            <h1>Website tin hay</h1>
+            <h5>Chỉ gồm những tin mang đến niềm vui</h5>
+        </div>
+        <img class="ml-auto" src="header-object.png">
+    </header>
+    <nav class="row"> </nav>
+    <div class="row">
+        <aside class="col-sm-3" id="cottrai">
+            <a href="thohay.html">Thơ hay</a>
+            <a href="tingiaoduc.html">Tin giáo dục</a>
+            <a href="tinxahoi.html">Tin xã hội</a>
+            <a href="tinthethao.html">Tin thể thao</a>
+        </aside>
+        <article class="col-9" id="yeuthuong">
+            <h1>Trang chủ</h1>
+        </article>
+    </div>
+    <footer class="row bg-secondary">
+    </footer>
+</div>
